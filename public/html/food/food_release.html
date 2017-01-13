@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>大家乐在线点餐系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../../dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../dist/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="http://10.10.87.175:3089/css/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.åjs"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!-- 头部信息 -->
+  <header class="main-header"></header>
+  <!--  左侧导航 -->
+  <aside class="main-sidebar"></aside>
+
+  <!-- 内容区域 -->
+  <div class="content-wrapper">
+    <!-- 内容标题 -->
+    <section class="content-header">
+      <h1>
+        <small>商品货架</small>/发布新商品
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li><a href="#">门店管理</a></li>
+        <li class="active">门店列表</li>
+      </ol>
+    </section>
+
+    <!-- 内容区 -->
+
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- /.box -->
+          <div class="box">
+            <div class="tabbable"> <!-- Only required for left/right tabs -->
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab" class="btn-flat">1、编辑商品信息</a></li>
+                <li><a href="#tab2" data-toggle="tab" >2、编辑商品详情</a></li>
+              </ul>
+              <div class="tab-content">
+                <!--编辑商品信息开始-->
+                <div class="tab-pane active" id="tab1">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">商品信息</h3> 
+                  </div>  
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <dl class="dl-horizontal">
+                      <dt>商品编号</dt>
+                      <dd>032727347</dd>
+                      <dt>商品分类</dt>
+                      <dd>
+                        <div class="col-xs-3 row">
+                          <div class="form-group row">
+                            <div class="col-sm-7">
+                                <select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple data-live-search="false">
+                                        <option value="0" selected="selected">1</option>
+                                        <option value="1" selected="selected">2</option>
+                                        <option value="2">3</option>
+                                        <option value="3">4</option>  
+                                </select>
+                            </div>
+                          </div>
+                        </div>
+                      </dd>
+                      <dt>商品名称</dt>
+                      <dd>
+                         <div class="col-xs-3 row">
+                        <input type="text" name="" class="form-control">
+                        </div>
+                      </dd>
+                      <dt>支付方式</dt>
+                      <dd>
+                        <div class="col-xs-3 row">
+                          <select class="form-control">
+                            <option>所有门店类型</option>
+                            <option>option 2</option>
+                            <option>option 3</option>
+                            <option>option 4</option>
+                            <option>option 5</option>
+                          </select>
+                        </div>
+                      </dd>
+                      <dt>封面图片</dt>
+                      <dd>
+                          <div id="preview">
+                            <img id="imghead" width=100% height=auto border=0 src='../img/pct.jpg'>
+                          </div>
+                          <input type="file" class="hidden" id="pto" onchange="previewImage(this)" />  
+                      </dd>
+                      <dt>详情图片</dt>
+                      <dd>392993899382</dd>
+                    </dl>
+                  </div>
+                  <div class="box-header with-border">
+                    <h3 class="box-title">规格与价格</h3> 
+                  </div>  
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <dl class="dl-horizontal">
+                      <dt>价格类型</dt>
+                      <dd>
+                          <div class="col-xs-3 row">
+                          <select class="form-control">
+                            <option>金额</option>
+                            <option>option 2</option>
+                            <option>option 3</option>
+                            <option>option 4</option>
+                            <option>option 5</option>
+                          </select>
+                        </div>
+                      </dd>
+                      <dt>单价</dt>
+                      <dd>
+                        <div class="col-xs-3 row">
+                        <input type="text" name="" class="form-control">
+                        </div>
+                      </dd>
+                      <dt>颜色设置</dt>
+                      <dd>
+                        <table class="table table-bordered text-center">
+                          <tbody id="sytem-ct">
+                            <tr >
+                              <th>名称</th>
+                              <th>封面图</th>
+                              <th>颜色</th>
+                              <th>颜色图</th>
+                              <th>操作</th>
+                            </tr>
+
+                            <tr>
+                              <td>
+                                <input type="text" name="" class="form-control">
+                              </td>
+                              <td>
+                                <div class="col-xs-7 div-center">
+                                
+                                  <a href="#" class="" id="code_button" style="right: 0;left: 0;min-width: 105px;position: absolute;" lang>上传封面图</a>
+                                 <input type="file" name="head_icon" id="file0" class="file_place" style="opacity: 0;max-width: 105px;" />
+                                 <div id="imgArea" style="display:none;margin-top:10px;">
+                                   <img src="" id="img0" width="50px" height="50px"/>
+                                 </div> 
+                                </div>
+                              </td>
+                              <td>
+                                <input type="text" name="" class="form-control">
+                              </td>
+                              <td>
+                                <div class="col-xs-7 div-center">
+                                  
+                                   <a href="#" class="" id="code_button" style="right: 0;left: 0;min-width: 105px;position: absolute;" lang>上传颜色图</a>
+                                 <input type="file" name="head_icon" id="file0" class="file_place" style="opacity: 0;max-width: 105px;" />
+                                 <div id="imgArea" style="display:none;margin-top:10px;">
+                                   <img src="" id="img0" width="50px" height="50px"/>
+                                 </div> 
+                                </div>
+                              </td>
+                              <td class="dispy-fix">
+                                <button type="button" class="btn btn-default btn-xs btn-flat margin text-blue sytem-dlter">删除</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dd>
+                      <dt></dt>
+                      <dd>
+                        <div class="col-xs-2 row">
+                          <button type="button" class="btn btn-block btn-flat add-sytem"><i class="glyphicon glyphicon-plus"></i>
+                          &nbsp;添加</button>
+                        </div>
+                      </dd>
+                      <dt>罩杯设置</dt>
+                      <dd>
+                        <div class="col-xs-9">
+                          <ul class="ul">
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> A杯
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> B杯
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> C杯
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> D杯
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> E杯
+                              </label>
+                            </li>
+                           
+                           
+                          </ul>
+                        </div>
+                      </dd>
+                      <dt>尺寸设置</dt>
+                      <dd>
+                        <div class="col-xs-12">
+                          <ul class="ul">
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 70/32
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 75/34
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 75/36
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 80/32
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 80/34
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 85/36
+                              </label>
+                            </li>
+                            <li>
+                              <label class="">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 85/40
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </dd>
+                      
+                    </dl>
+                  </div>
+                  <!-- /.box-body--> 
+                  <div class="box-header with-border">
+                    <h3 class="box-title">其它</h3> 
+                  </div>  
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <dl class="dl-horizontal">
+                      <dt>每人限购</dt>
+                      <dd>
+                         <div class="col-xs-3 row">
+                          <input type="text" name="" class="form-control">
+                        </div>
+                        <div class="col-xs-2  tect-gray margin-top8">0 代表不限购</div>
+                      </dd>
+                      <dt>要求留言</dt>
+                      <dd>
+                        <div class="col-xs-3 row">
+                          <input type="text" name="" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                          <select class="form-control">
+                            <option>身份证号</option>
+                            <option>option 2</option>
+                            <option>option 3</option>
+                            <option>option 4</option>
+                            <option>option 5</option>
+                          </select>
+                        </div>
+                        <div class="col-xs-2">
+                          <label class="">
+                              <input type="checkbox" id="inlineCheckbox1" value="option1" class="margin-top8">必填
+                          </label>
+                        </div>
+                      </dd>
+                      <dt>开售时间</dt>
+                      <dd>
+                         <label class="">
+                              <input type="radio" id="inlineCheckbox1" value="option1">立即开售
+                          </label>
+                      </dd>
+                      <dd>
+                         <div class="col-xs-2 row">
+                        <label class="">
+                              <input type="radio" id="inlineCheckbox1" value="option1">定时开售
+                        </label>
+                        </div>
+                         <div class="col-xs-3 row">
+                          <input type="text" name="" class="form-control">
+                        </div>
+                      </dd>
+                      <dt>是否预售</dt>
+                      <dd>
+                         <div class="col-xs-2 row">
+                          <label class="">
+                                <input type="radio" id="inlineCheckbox1" value="option1">预售商品
+                          </label>
+                        </div>
+                         <div class="col-xs-3 row">
+                           <label class="">
+                                <input type="radio" id="inlineCheckbox1" value="option1">否
+                          </label>
+                        </div>
+                      </dd>
+                     
+                    </dl>
+                  </div>
+                  <!-- /.box-body --> 
+                   <div class="row">
+                      <div class="col-xs-3 footer-diply-cernter">
+                          <button type="button" class="btn bg-pink btn-flat btn_submit">下一步</button>
+                          <button type="button" class="btn  btn-defadult btn-flat" >取消</button>
+                      </div>
+                  </div>
+                </div>
+                <!--编辑商品信息结束-->
+
+                <!--编辑商品详情开始-->
+                <div class="tab-pane" id="tab2">
+                     <div class="box">
+                      <div class="box-header">
+                        <h3 class="box-title">商品详情</h3>
+                      </div>
+                      <!-- /.box-header -->
+                      <div class="box-body pad">
+                        <textarea class="editor1" name="editor1" rows="10" cols="80">
+                            
+                        </textarea> 
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3 margin">
+                          <label>商品重量(g)</label>
+                          <input type="text" name="">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.box -->
+                    <div class="box">
+                      <div class="box-header">
+                        <h3 class="box-title">
+                          售后服务
+                        </h3>
+                       
+                      </div>
+                      <!-- /.box-header -->
+                      <div class="box-body pad">
+                        <form>
+                          <textarea class="textarea" placeholder="" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                        </form>
+                      </div>
+                    </div>
+                   <div class="row">
+                    <div class="col-xs-3 footer-diply-cernter">
+                        <button type="button" class="btn  btn-defadult btn-flat" >上一步</button>
+                        <button type="button" class="btn bg-pink btn-flat">保存</button>
+                        <button type="button" class="btn  btn-defadult btn-flat" >取消</button>
+                    </div>
+                  </div>
+                </div>
+                <!--编辑商品详情结束-->
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/i18n/defaults-*.min.js"></script> -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+
+<script type="text/javascript">
+  var pageMenu = {"active": [2,21]};
+</script>
+<script src="../../js/vendors.js" type="text/javascript"></script>
+<script src="../../js/index.js" type="text/javascript"></script>
+<!-- page script -->
+<script type="text/javascript">
+  
+		$(".btn_submit").click(function(){
+			var val = $(".filter-option").text();
+			if(val == '请选择商品分类'){
+				alert("您未选择商品分类");
+				return false;
+			}
+		})
+		
+		
+      //图片上传预览    IE是用了滤镜。
+        $("#preview").click(function(event) {
+          $("#pto").hide().click();
+        });
+        function previewImage(file)
+        {
+          var MAXWIDTH  = 260; 
+          var MAXHEIGHT = 180;
+          var div = document.getElementById('preview');
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead>';
+              var img = document.getElementById('imghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+</script>  
+<script type="text/javascript">
+  //添加颜色设置
+
+    $(function(){
+      $(".add-sytem").click(function(event) {
+        $("#sytem-ct").append('<tr class="sytem-father"> <td><input type="text" name="" class="form-control"></td><td> <div class="col-xs-7 div-center"><a href="#" class="" id="code_button" style="right: 0;left: 0;min-width: 105px;position: absolute;" lang>上传封面图</a> <input type="file" name="head_icon" id="file0" class="file_place" style="opacity: 0;max-width: 105px;" /><div id="imgArea" style="display:none;margin-top:10px;"> <img src="" id="img0" width="50px" height="50px"/> </div> </div></div> </td> <td> <input type="text" name="" class="form-control"></td> <td> <div class="col-xs-7 div-center"><a href="#" class="" id="code_button" style="right: 0;left: 0;min-width: 105px;position: absolute;" lang>上传颜色图</a> <input type="file" name="head_icon" id="file0" class="file_place" style="opacity: 0;max-width: 105px;" /><div id="imgArea" style="display:none;margin-top:10px;"> <img src="" id="img0" width="50px" height="50px"/> </div> </div></div> </td> <td class="dispy-fix"> <button type="button" class="btn btn-default btn-xs btn-flat margin text-blue sytem-dlter">删除</button> </td> </tr>');
+      });
+      //删除
+      jQuery(document).ready().on("click",".sytem-dlter",function(){
+        var ff = $(this).parents("tr").remove();
+        console.log(ff);
+      });
+
+    /*  $(document).on("click","#code_button",function(){
+          $(this).next().click()
+      })*/
+     
+       $(document).on("change","#code_button + #file0",function(){
+       
+        console.log(this)
+           var objUrl = getObjectURL(this.files[0]);
+          var img = $(this).val();
+          /*var reg = /\.(jpg)$/i;*/
+          console.log("objUrl = " + objUrl);
+         /* $("#imgArea").hide();
+          if(!reg.test(img)){
+              alert('图片格式不正确（必须为.jpg文件）');
+              return false;
+          }*/
+          if (objUrl) {
+              $(this).next().show();
+              $(this).next().children().attr("src", objUrl);
+          }
+       })
+    //建立一個可存取到該file的url
+      function getObjectURL(file) {
+          var url = null;
+          if (window.createObjectURL != undefined) { // basic
+              url = window.createObjectURL(file);
+          } else if (window.URL != undefined) { // mozilla(firefox)
+              url = window.URL.createObjectURL(file);
+          } else if (window.webkitURL != undefined) { // webkit or chrome
+              url = window.webkitURL.createObjectURL(file);
+          }
+          return url;
+      }
+
+    })
+
+  /*  $('.selectpicker').selectpicker('val', 'Mustard');  */
+</script>
+</body>
+</html>
+

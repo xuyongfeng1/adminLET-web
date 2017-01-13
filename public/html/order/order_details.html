@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>大家乐在线点餐系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../../dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../dist/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../../css/admin.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.åjs"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!-- 头部信息 -->
+  <header class="main-header"></header>
+  <!--  左侧导航 -->
+  <aside class="main-sidebar"></aside>
+
+
+  <!-- 内容区域 -->
+  <div class="content-wrapper">
+    <!-- 内容标题 -->
+    <section class="content-header">
+      <h1>
+        <small>所有订单</small>/订单详情
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li><a href="#">门店管理</a></li>
+        <li class="active">门店列表</li>
+      </ol>
+    </section>
+    
+    <!-- 内容区 -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- /.box -->
+          <div class="box">
+            <div class="box-body oder-detils">
+              <div class="col-xs-6 border-odr">
+                <p class="boder-btm">
+                  订单信息
+                </p>
+                <p>订单号：E238490238490283490289</p>
+                <p>微信交易号：E20160603142021050496876</p>
+                <p>订单门店：广东省深圳市福田区福田1店</p>
+                <p class="boder-btm">
+                </p>
+                <p>买家：赵晓晓</p>
+                <p>联系方式：13892738746</p>
+                <p>收货信息：广州市天河区斜土路343号1003室</p>
+                <p>付款方式：微信支付</p>
+                <p>买家留言：</p>
+              </div>
+              <div class="col-xs-6">
+                <p class="boder-btm">
+                  订单状态
+                  <p>订单状态：<span class="text-blue">待发货</span></p>
+                  <p>2016-06-29 12:22:23    下订单</p>
+                  <p>2016-06-29 12:29:23    付款</p>
+                </p>
+                <button type="button" class="btn btn-flat btn-yellow">确认发货</button>
+              </div>
+            </div>
+            <div class="box-body">
+              <table class="table table-bordered text-center">
+                <tbody>
+                  <tr>
+                    <th>门店编号</th>
+                    <th>商品编号</th>
+                    <th>商品名称</th>
+                    <th>规格尺寸</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>合计金额</th>
+                  </tr>
+                <tr>
+                  <td><img src="../img/u2435.png" width="60px" height="60px"></td>
+                  <td>090008</td>
+                  <td>都市俪人内衣A杯优质舒适镂空蕾丝聚拢大红色本命年文胸</td>
+                  <td>蓝色、A罩杯、32A/70A</td>
+                  <td>49.00</td>
+                  <td>2</td>
+                  <td>98.00</td>
+                </tr>
+                <tr>
+                  <td><img src="../img/u2435.png" width="60px" height="60px"></td>
+                  <td>090008</td>
+                  <td>都市俪人内衣A杯优质舒适镂空蕾丝聚拢大红色本命年文胸</td>
+                  <td>蓝色、A罩杯、32A/70A</td>
+                  <td>49.00</td>
+                  <td>2</td>
+                  <td>98.00</td>
+                </tr>
+                </tbody>
+              </table>
+              <div class="oder-money form-group text-right">
+                  <span>应收总价：</span>
+                  <span class="mony-text">
+                    ￥163.00
+                  </span>
+              </div>
+            </div>
+
+            <!-- /.box-body -->
+
+          </div>
+           
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+
+<script type="text/javascript">
+  var pageMenu = {"active": [3,11]};
+</script>
+<script src="../../js/vendors.js" type="text/javascript"></script>
+<script src="../../js/index.js" type="text/javascript"></script>
+<!-- page script -->
+</body>
+</html>
+

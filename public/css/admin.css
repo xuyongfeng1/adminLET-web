@@ -1,0 +1,297 @@
+/*! 
+ *   Mc v1.1
+!*/
+html,
+body {
+  min-height: 100%;
+  background-color: #fef4d6;
+  font-family: 'MicroSoft YaHei';
+}
+p,
+h3 {
+  margin: 0px;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+a,
+button,
+label,
+textarea,
+div,
+select,
+option {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+em,
+cite {
+  font-style: normal;
+}
+textarea {
+  resize: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+i {
+  display: block;
+}
+.ui-checkbox input:checked:before,
+.ui-checkbox-s input:checked:before {
+  color: #54a435;
+}
+.mg-top35 {
+  margin-top: 35px !important;
+}
+.mg-top0 {
+  margin-top: 0 !important;
+}
+.h39 {
+  height: 39px !important;
+}
+.btn-yellow {
+  background: #ffd901;
+}
+.btn-gray {
+  background: #C9C9C9;
+  color: #fff;
+}
+.btn-white {
+  background: #fff;
+}
+.pad20 {
+  padding: 20px 0;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.no-select {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all /opera15+*/
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+}
+/*! 
+  *   Mc v1.1
+  *   大家乐后台系统样式
+  *   by--wy
+!*/
+.w160 {
+  width: 160px;
+}
+.main-header {
+  min-height: 50px;
+}
+.login-box-body {
+  background: transparent;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+}
+.skin-blue .wrapper,
+.skin-blue .main-sidebar,
+.skin-blue .left-side {
+  background-color: #ecba5d;
+}
+.skin-blue .sidebar a {
+  color: #333;
+}
+.skin-blue .main-header .navbar {
+  background-color: #404040;
+}
+.skin-blue .main-header .logo {
+  background-color: #404040;
+}
+.skin-blue .main-header .logo:hover {
+  background-color: #404040;
+}
+.skin-blue .sidebar-menu > li:hover > a,
+.skin-blue .sidebar-menu > li.active > a {
+  color: #333;
+  background: #FBCD44;
+  border-right-color: #fc6500!important;
+  border-left-color: transparent;
+}
+.skin-blue .sidebar-menu > li > a {
+  border-right: 6px solid transparent;
+}
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color: #404040;
+}
+.content-wrapper,
+.right-side {
+  background: #fff;
+}
+.box {
+  border-top: 0;
+  box-shadow: none;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border: none;
+  border-bottom: 4px solid #ecba5d;
+}
+.nav-tabs > li > a:hover {
+  border: none;
+  border-bottom: 4px solid #fdeebc;
+  border-radius: 0;
+  background: transparent;
+}
+.skin-blue .content-header {
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0px 15px 0px;
+  margin: 0 15px;
+}
+.detail_title {
+  border-bottom: 1px dashed #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.foot_bg {
+  background: #F4F5F9;
+  padding: 20px 0;
+}
+.align-center {
+  text-align: center;
+}
+.box-footer.foot_bg .btn {
+  width: 100px;
+  margin-right: 10px;
+}
+label {
+  font-weight: 100;
+}
+.import {
+  display: inline-block;
+  margin-right: 10px;
+}
+.red {
+  color: red;
+}
+.text-gray {
+  color: #ccc;
+}
+.info_list {
+  padding: 20px;
+  text-align: center;
+  background: #f4f5f9;
+}
+.oder-detils {
+  min-height: 300px;
+  background: #F4F5F9;
+}
+.oder-detils .border-odr {
+  border-right: 1px solid #C9C9C9;
+}
+.oder-detils .col-xs-6 {
+  padding: 20px;
+}
+.boder-btm {
+  border-bottom: 1px dashed #000;
+  padding: 5px 0px;
+  margin: 10px 0px;
+  font-size: 17px;
+}
+.oder-money {
+  height: 60px;
+  background: #F4F5F9;
+  border: 1px solid #C9C9C9;
+  line-height: 40px;
+  padding: 10px;
+}
+.oder-money .mony-text {
+  font-size: 25px;
+  color: #FC6500;
+}
+.text-left {
+  text-align: left!important;
+}
+.text-right {
+  text-align: right;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-inline .form-group {
+  margin-bottom: 15px;
+  margin-right: 30px;
+}
+.form-inline .form-group label {
+  width: 60px;
+}
+.table-bordered > thead > tr > th {
+  background: #f2f2f2;
+  font-weight: 100;
+}
+.delImg {
+  color: #3c8dbc;
+  margin-top: 80px;
+  display: inline-block;
+  margin-left: 20px;
+}
+.modal-footer {
+  background: #f4f5f9;
+}
+.modal-footer .btn {
+  width: 100px;
+}
+#user_tabs .nav-tabs > li.active > a,
+#user_tabs .nav-tabs > li.active > a:focus,
+#user_tabs .nav-tabs > li.active > a:hover {
+  background: #F9C500;
+  border-radius: 0;
+  border: 0;
+}
+#user_tabs .nav > li > a {
+  padding: 8px 25px;
+}
+#user_tabs .nav-tabs > li > a:hover {
+  background: #f4f5f9;
+  border: 0;
+}
+.skin-blue .sidebar-menu > li > .treeview-menu {
+  background: #FDEEBC;
+}
+.skin-blue .treeview-menu > li.active > a,
+.skin-blue .treeview-menu > li > a:hover {
+  color: #333;
+}
+.login-box {
+  width: 700px;
+}
+.login-box .login-box-body {
+  border-right: 1px solid #ccc;
+}
+.login-box .login_left a {
+  margin-top: 117px;
+  background: #ffd901;
+  display: block;
+  width: 250px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  vertical-align: middle;
+}
+.bootstrap-select button {
+  background-color: #fff !important;
+  border-color: #d2d6de !important;
+  color: #333 !important;
+}
+.bootstrap-select button .caret {
+  color: #333 !important;
+}

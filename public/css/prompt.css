@@ -1,0 +1,36 @@
+@keyframes fadeOut { from { opacity: 1; }
+  to { opacity: 0; } }
+.fadeOut { animation-name: fadeOut; }
+
+@-webkit-keyframes zoomIn { from { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); }
+  50% { opacity: 1; } }
+@keyframes zoomIn { from { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); }
+  50% { opacity: 1; } }
+.zoomIn { -webkit-animation-name: zoomIn; animation-name: zoomIn; }
+
+@-webkit-keyframes zoomOut { from { opacity: 1; }
+  50% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); }
+  to { opacity: 0; } }
+@keyframes zoomOut { from { opacity: 1; }
+  50% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); }
+  to { opacity: 0; } }
+.zoomOut { -webkit-animation-name: zoomOut; animation-name: zoomOut; }
+
+.animated { -webkit-animation-duration: 0.3s; animation-duration: 0.3s; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+
+.iprompt { z-index: 9999; position: fixed; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); vertical-align: middle; display: table-cell; top: 0; bottom: 0; text-align: center; }
+
+.ipromptBox { width: 400px; height: 150px; position: fixed; top: 50%; left: 0; right: 0; bottom: 0; background: #fff; border: 1px solid #666666; border-radius: 4px; text-align: center; margin: -75px auto 0; color: #666; font-size: 16px; }
+.ipromptBox p { text-align: center; height: 100px; width: 360px; padding: 5px 20px; border-bottom: 1px solid #E6E6E6; display: table; }
+.ipromptBox p span { display: table-cell; vertical-align: middle; text-align: center; }
+.ipromptBox .alertOKBtn { width: 100%; line-height: 39px; text-align: center; display: block; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+.ipromptBox .alertOKBtn:hover { cursor: pointer; background: #F0F0F0; }
+.ipromptBox .confirmOKBtn { width: 50%; line-height: 39px; text-align: center; display: inline-block; border-left: 1px solid #E6E6E6; margin-left: -2px; border-bottom-right-radius: 4px; }
+.ipromptBox .confirmOKBtn:hover { cursor: pointer; background: #F0F0F0; }
+.ipromptBox .confirmCancelBtn { width: 50%; line-height: 39px; text-align: center; display: inline-block; border-bottom-left-radius: 4px; }
+.ipromptBox .confirmCancelBtn:hover { cursor: pointer; background: #F0F0F0; }
+
+.bubble { background: rgba(0, 0, 0, 0.6); z-index: 10001; color: #fff; border-radius: 4px; height: 50px; line-height: 50px; width: 150px; position: fixed; top: 50%; left: 0; right: 0; bottom: 0; text-align: center; margin: -25px auto 0; font-size: 16px; }
+.bubble span { text-align: center; }
+
+/*# sourceMappingURL=prompt.css.map */

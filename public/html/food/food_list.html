@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>大家乐在线点餐系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../../dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../dist/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../../css/admin.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.åjs"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <!-- 头部信息 -->
+    <header class="main-header"></header>
+    <!--  左侧导航 -->
+    <aside class="main-sidebar"></aside>
+
+    <!-- 内容区域 -->
+    <div class="content-wrapper">
+        <!-- 内容标题 -->
+        <section class="content-header">
+            <h1>
+                餐品库
+            </h1>
+            <!-- <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="#">门店管理</a></li>
+                <li class="active">门店列表</li>
+            </ol> -->
+        </section>
+        <!-- 内容区 -->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                  <!-- /.box -->
+                    <div class="box">
+                        <div class="tabbable"> <!-- Only required for left/right tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1" data-toggle="tab" class="btn-flat">出售中</a></li>
+                                <li><a href="food_over.html" >已售罄</a></li>
+                                <li><a href="food_warehouse.html">仓库中</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab1">
+                                    <div class="box-header with-border">
+                                    <!-- <h3 class="box-title">Bordered Table</h3> -->
+                                        <div class="row">
+                                            <div class="col-xs-2 w160">
+                                                <a href="release_new.html"><button type="button" class="btn btn-block btn-flat btn-yellow">发布新餐品</button></a>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <select class="form-control">
+                                                    <option>所有时段</option>
+                                                    <option>早茶市</option>
+                                                    <option>午夜市</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <select class="form-control">
+                                                    <option>所有餐品分类</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <input type="text" class="form-control" placeholder="输入餐品名称筛选">
+                                            </div>
+                                            <div class="col-xs-1">
+                                                <button type="button" class="btn btn-block btn-default btn-flat">筛选</button>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table class="table table-bordered text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" name='ck_all' id="all"></th>
+                                                    <th>餐品编号</th>
+                                                    <th>所属时段</th>
+                                                    <th>餐品分类</th>
+                                                    <th>分类排序</th>
+                                                    <th>商品名称</th>
+                                                    <th>总库存</th>
+                                                    <th>总销量</th>
+                                                    <th>创建时间</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input type="checkbox" name='ck_list'></td>
+                                                    <td>axy002922</td>
+                                                    <td>早茶市</td>
+                                                    <td>澳门猪扒包自由系列</td>
+                                                    <td>1</td>
+                                                    <td>澳门猪扒包+脆皮肠</td>
+                                                    <td>200</td>
+                                                    <td>12</td>
+                                                    <td>2016-06-29 13:00:23</td>
+                                                    <td>
+                                                        <a href="release_detail_single.html" class="btn btn-default btn-xs btn-flat margin">编辑</a>
+                                                        <button type="button" class="btn btn-default btn-xs btn-flat margin">下架</button>
+                                                        <button type="button" class="btn btn-default btn-xs btn-flat margin">删除</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                  <!-- /.box-body --> 
+                                  <div class="box-footer clearfix">
+                                    <ul class="pagination pagination-sm no-margin pull-right">
+                                      <li><a href="#">«</a></li>
+                                      <li><a href="#">1</a></li>
+                                      <li><a href="#">2</a></li>
+                                      <li><a href="#">3</a></li>
+                                      <li><a href="#">»</a></li>
+                                    </ul>
+                                  </div>
+
+                                </div>
+                    
+                            </div>
+                        </div>
+                  
+                    </div>
+          
+                </div>
+                <!-- /.col -->
+            </div>
+          <!-- /.row -->
+        </section>
+        <!-- /.content -->
+  </div>
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+
+<script type="text/javascript">
+    var pageMenu = {"active": [2,21]};
+    $(function(){
+        $("input[name=ck_all]").click(function(){    
+            if(this.checked){    
+                $("input[name=ck_list]").prop("checked", true);   
+            }else{    
+                $("input[name=ck_list]").prop("checked", false); 
+            }    
+        });
+        $("input[name=ck_list]").click(function(){  
+            var length1=$("input[name=ck_list]").length;
+            var length2=$("input[name=ck_list]:checked").length;
+            if(length1==length2){
+                $("input[name=ck_all]").prop("checked",true);
+            }else{
+                $("input[name=ck_all]").prop("checked",false);
+            }
+        });
+    })
+</script>
+<script src="../../js/vendors.js" type="text/javascript"></script>
+<script src="../../js/index.js" type="text/javascript"></script>
+<!-- page script -->
+</body>
+</html>
+

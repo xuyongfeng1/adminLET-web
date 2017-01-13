@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>大家乐在线点餐系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../../dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../dist/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../../css/admin.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.åjs"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!-- 头部信息 -->
+  <header class="main-header"></header>
+  <!--  左侧导航 -->
+  <aside class="main-sidebar"></aside>
+
+  <!-- 内容区域 -->
+  <div class="content-wrapper">
+    <!-- 内容标题 -->
+    <section class="content-header">
+        <h1>
+            餐品分类
+        </h1>
+        <!-- <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="#">门店管理</a></li>
+            <li class="active">门店列表</li>
+        </ol> -->
+    </section>
+
+    <!-- 内容区 -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+            <!-- /.box -->
+            <div class="box">
+            <div class="box-header with-border">
+              <!-- <h3 class="box-title">Bordered Table</h3> -->
+              
+                <div class="row">
+                    <div class="col-xs-2 w160">
+                        <button type="button" class="btn btn-block btn-flat btn-yellow" data-toggle="modal" data-target="#myModal">添加分类</button>
+                    </div>
+              
+                    <div class="col-xs-2">
+                        <select class="form-control">
+                            <option>所有时段</option>
+                            <option>早茶市</option>
+                            <option>午夜市</option>
+                        </select>
+                    </div>
+                 
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" placeholder="输入分类名称搜索筛选">
+                    </div>
+                    <div class="col-xs-1">
+                        <button type="button" class="btn btn-block btn-default btn-flat">筛选</button>
+                    </div>
+                </div>
+              
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name='ck_all'></th>
+                            <th>分类名称</th>
+                            <th>所属时段</th>
+                            <th>分类排序</th>
+                            <th>是否有分类图</th>
+                            <th>餐品数</th>
+                            <th>创建时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name='ck_list'></td>
+                            <td>澳门猪扒包自由系列</td>
+                            <td>早茶市</td>
+                            <td>1</td>
+                            <td>无</td>
+                            <td>5</td>
+                            <td>2016-06-29 13:00:23</td>
+                            <td>
+                                <button type="button" class="btn btn-default btn-xs btn-flat margin" data-toggle="modal" data-target="#myModal2">编辑</button>
+                                <button type="button" class="btn btn-default btn-xs btn-flat margin">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name='ck_list'></td>
+                            <td>澳门猪扒包自由系列</td>
+                            <td>早茶市</td>
+                            <td>1</td>
+                            <td>无</td>
+                            <td>5</td>
+                            <td>2016-06-29 13:00:23</td>
+                            <td>
+                                <button type="button" class="btn btn-default btn-xs btn-flat margin" data-toggle="modal" data-target="#myModal2">编辑</button>
+                                <button type="button" class="btn btn-default btn-xs btn-flat margin">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <ul class="pagination pagination-sm no-margin pull-right">
+                <li><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">»</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+<!-- 模态框（Modal） -->
+<!-- 添加 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          添加餐品分类
+        </h4>
+      </div>
+      <div class="modal-body">
+          <div class="box-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-3 control-label"><i class="red import">*</i>分类名称</label>
+              <div class="col-sm-9">
+                <input type="" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"><i class="red import">*</i>所属时段</label>
+                <div class="col-sm-9">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1">全部时段
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1">早茶市
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1">午夜市
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-xs-12">
+              <label for="inputPassword3" class="col-sm-3 control-label text-right"><i class="red import">*</i>分类排序</label>
+
+              <div class="col-sm-9">
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                 <p class="help-center text-gray">该分类在页面中的排列顺序</p>
+              </div>
+
+            </div>
+             <div class="form-group">
+                <label class="col-sm-3 control-label"><i class="red import">*</i>封面图片</label>
+                <div class="col-sm-3" id="preview">
+                    <img id="imghead" src="../img/pct.jpg" alt="" width="150" height="100">
+                </div>
+                <input type="file" id="pto" onchange="previewImage(this)" style="display:none;">
+                <!-- <div class="col-sm-2" >
+                    <a href="javascript:;" class="delImg" >删除</a>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"></label>
+                <div class="col-sm-7">
+                    <p class="text-gray">尺寸150*100像素，PNG图片</p>
+                </div>
+            </div>
+           </form>
+          </div>
+      </div>
+      <div class="modal-footer" style="text-align:center !important">
+        <button type="button" class="btn btn-yellow btn-flat">确认</button>
+        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">取消</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
+
+
+<!-- 编辑 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          添加餐品分类
+        </h4>
+      </div>
+      <div class="modal-body">
+          <div class="box-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-3 control-label"><i class="red import">*</i>分类名称</label>
+              <div class="col-sm-9">
+                <input type="" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"><i class="red import">*</i>所属时段</label>
+                <div class="col-sm-9">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1">全部时段
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1">早茶市
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1">午夜市
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-xs-12">
+              <label for="inputPassword3" class="col-sm-3 control-label text-right"><i class="red import">*</i>分类排序</label>
+
+              <div class="col-sm-9">
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                 <p class="help-center text-gray">该分类在页面中的排列顺序</p>
+              </div>
+
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"><i class="red import">*</i>封面图片</label>
+                <div class="col-sm-3" id="preview2">
+                    <img id="imghead2" src="../img/pct.jpg" alt="" width="150" height="100">
+                </div>
+                <input type="file" id="pto2" onchange="previewImage2(this)" style="display:none;">
+                <!-- <div class="col-sm-2" >
+                    <a href="javascript:;" class="delImg" >删除</a>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"></label>
+                <div class="col-sm-7">
+                    <p class="text-gray">尺寸150*100像素，PNG图片</p>
+                </div>
+            </div>
+           </form>
+          </div>
+      </div>
+      <div class="modal-footer" style="text-align:center !important">
+        <button type="button" class="btn btn-yellow btn-flat">确认</button>
+        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">取消</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+
+<script type="text/javascript">
+  var pageMenu = {"active": [2,22]};
+  $(function(){
+        $("input[name=ck_all]").click(function(){    
+            if(this.checked){    
+                $("input[name=ck_list]").prop("checked", true);   
+            }else{    
+                $("input[name=ck_list]").prop("checked", false); 
+            }    
+        });
+        $("input[name=ck_list]").click(function(){  
+          var length1=$("input[name=ck_list]").length;
+          var length2=$("input[name=ck_list]:checked").length;
+          if(length1==length2){
+              $("input[name=ck_all]").prop("checked",true);
+          }else{
+              $("input[name=ck_all]").prop("checked",false);
+          }
+        });
+    })
+  //图片上传预览    IE是用了滤镜。
+        $("#preview").click(function(event) {
+          $("#pto").hide().click();
+        });
+        function previewImage(file)
+        {
+          var MAXWIDTH  = 150; 
+          var MAXHEIGHT = 100;
+          var div = document.getElementById('preview');
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead>';
+              var img = document.getElementById('imghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+
+        $("#preview2").click(function(event) {
+          $("#pto2").hide().click();
+        });
+        function previewImage2(file)
+        {
+          var MAXWIDTH  = 150; 
+          var MAXHEIGHT = 100;
+          var div = document.getElementById('preview2');
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead2>';
+              var img = document.getElementById('imghead2');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead2>';
+            var img = document.getElementById('imghead2');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead2 style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+</script>
+<script src="../../js/vendors.js" type="text/javascript"></script>
+<script src="../../js/index.js" type="text/javascript"></script>
+<!-- page script -->
+
+</body>
+</html>
